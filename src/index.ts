@@ -1,6 +1,6 @@
 import badgen from 'badgen';
 import { writeFileSync } from 'fs';
-import { ensureFileSync } from 'fs-extra';
+import { ensureDirSync } from 'fs-extra';
 import {
   IOptions,
   IReporter,
@@ -32,7 +32,7 @@ export default class implements IReporter {
       subject: 'Copy/Paste',
       ...badgeOptions
     });
-    ensureFileSync(this.options.output);
+    ensureDirSync(this.options.output);
     writeFileSync(badgeOptions.path ? badgeOptions.path : join(this.options.output, 'jscpd-badge.svg'), badge);
   }
 

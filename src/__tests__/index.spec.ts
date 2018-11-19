@@ -9,7 +9,7 @@ const badgeDependencies = {
     writeFileSync: spy()
   },
   'fs-extra': {
-    ensureFileSync: stub().returns(true)
+    ensureDirSync: stub().returns(true)
   },
   path: {
     join: stub().returns('path')
