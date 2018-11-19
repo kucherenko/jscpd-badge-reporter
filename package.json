@@ -1,6 +1,6 @@
 {
   "name": "jscpd-badge-reporter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Reporter for jscpd fo generation copy/paste badges.",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
