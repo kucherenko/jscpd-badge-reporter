@@ -1,10 +1,21 @@
 import badgen from 'badgen';
 import { writeFileSync } from 'fs';
+import { ensureFileSync } from 'fs-extra';
 import {
   IOptions,
   IReporter, IStatistic
 } from 'jscpd';
 import { join } from 'path';
+
+interface IBadgeOptions {
+  color?: string,
+  status?: string,
+  subject?: string,
+  style?: string,
+  icon?: string,
+  iconWidth?: number,
+  pathBadge?: string,
+}
 
 export default class implements IReporter {
 
@@ -13,14 +24,24 @@ export default class implements IReporter {
 
   public report(...args: [any, IStatistic]): void {
     const [, statistic]: [any, IStatistic] = args;
+    const badgeOptions: IBadgeOptions = this.options.reportersOptions ? this.options.reportersOptions.badge || {} : {};
     const badge = badgen({
-      color: statistic.total.percentage < statistic.threshold ? 'green' : 'red',
+      color: this.getColor(statistic),
       status: statistic.total.percentage + '%',
-      subject: 'Copy/Paste'
+      subject: 'Copy/Paste',
+      ...badgeOptions
     });
-    writeFileSync(join(this.options.output, 'jscpd-badge.svg'), badge);
+    ensureFileSync(this.options.output);
+    writeFileSync(badgeOptions.pathBadge ? badgeOptions.pathBadge : join(this.options.output, 'jscpd-badge.svg'), badge);
   }
 
   public attach(): void {
+  }
+
+  public getColor(statistic: IStatistic): string {
+    if (!statistic.hasOwnProperty('threshold')) {
+      return 'grey';
+    }
+    return statistic.total.percentage < statistic.threshold ? 'green' : 'red';
   }
 }
