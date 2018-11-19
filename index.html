@@ -74,6 +74,17 @@
 				<pre><code class="language-bash">npm install jscpd@1.0.0-rc.5 jscpd-badge-reporter -g</code></pre>
 				<h3 id="usage">Usage</h3>
 				<pre><code class="language-bash">jscpd [...options] --reporters badge /path/to/<span class="hljs-built_in">source</span></code></pre>
+				<h3 id="options">Options</h3>
+				<pre><code class="language-typescript">
+<span class="hljs-keyword">interface</span> IBadgeOptions {
+  color?: <span class="hljs-built_in">string</span>, <span class="hljs-comment">// color of badge, if threshold &gt; current - green, if  threshold &lt; current - red, no threshold provided - grey</span>
+  subject?: <span class="hljs-built_in">string</span>, <span class="hljs-comment">// label of the badge, default "Copy/Paste" </span>
+  style?: <span class="hljs-built_in">string</span>, <span class="hljs-comment">// "flat" of undefined, default - undefined</span>
+  icon?: <span class="hljs-built_in">string</span>, <span class="hljs-comment">// 'data:image/svg+xml;base64,...' icon</span>
+  iconWidth?: <span class="hljs-built_in">number</span>, <span class="hljs-comment">// width of the icon</span>
+  path?: <span class="hljs-built_in">string</span>, <span class="hljs-comment">// path to badge, default is 'jscpd-badge.svg' in output folder</span>
+}
+</code></pre>
 				<p><a href="LICENSE">MIT</a> © Andrey Kucherenko</p>
 			</div>
 		</div>
@@ -89,6 +100,18 @@
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
 						<a href="classes/default.html" class="tsd-kind-icon">default</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="interfaces/ibadgeoptions.html" class="tsd-kind-icon">IBadge<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#badgereporter" class="tsd-kind-icon">Badge<wbr>Reporter</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="globals.html#proxyquire" class="tsd-kind-icon">proxyquire</a>
+					</li>
+					<li class=" tsd-kind-object-literal tsd-is-not-exported">
+						<a href="globals.html#badgedependencies" class="tsd-kind-icon">badge<wbr>Dependencies</a>
 					</li>
 				</ul>
 			</nav>
