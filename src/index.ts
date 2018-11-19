@@ -3,7 +3,8 @@ import { writeFileSync } from 'fs';
 import { ensureFileSync } from 'fs-extra';
 import {
   IOptions,
-  IReporter, IStatistic
+  IReporter,
+  IStatistic
 } from 'jscpd';
 import { join } from 'path';
 
@@ -14,7 +15,7 @@ interface IBadgeOptions {
   style?: string,
   icon?: string,
   iconWidth?: number,
-  pathBadge?: string,
+  path?: string,
 }
 
 export default class implements IReporter {
@@ -32,7 +33,7 @@ export default class implements IReporter {
       ...badgeOptions
     });
     ensureFileSync(this.options.output);
-    writeFileSync(badgeOptions.pathBadge ? badgeOptions.pathBadge : join(this.options.output, 'jscpd-badge.svg'), badge);
+    writeFileSync(badgeOptions.path ? badgeOptions.path : join(this.options.output, 'jscpd-badge.svg'), badge);
   }
 
   public attach(): void {

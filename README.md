@@ -31,7 +31,7 @@ interface IBadgeOptions {
   style?: string, // "flat" of undefined, default - undefined
   icon?: string, // 'data:image/svg+xml;base64,...' icon
   iconWidth?: number, // width of the icon
-  pathBadge?: string, // path to badge, default is 'jscpd-badge.svg' in output folder
+  path?: string, // path to badge, default is 'jscpd-badge.svg' in output folder
 }
 
 ```
