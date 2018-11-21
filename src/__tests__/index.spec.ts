@@ -1,5 +1,5 @@
 import test from 'ava';
-import {spy, stub} from 'sinon';
+import { spy, stub } from 'sinon';
 
 const proxyquire = require('proxyquire').noCallThru();
 
@@ -21,6 +21,11 @@ const BadgeReporter = proxyquire('../', badgeDependencies).default;
 test('should use grey color if threshold does not provided', t => {
   const reporter: any = new BadgeReporter({});
   t.is(reporter.getColor({}), 'grey');
+});
+
+test('should use N/A status if statistic does not provided', t => {
+  const reporter: any = new BadgeReporter({});
+  t.is(reporter.getStatus(), 'N/A');
 });
 
 test('should use red color if threshold less then total percentage', t => {

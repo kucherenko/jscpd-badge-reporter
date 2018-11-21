@@ -28,7 +28,7 @@ export default class implements IReporter {
     const badgeOptions: IBadgeOptions = this.options.reportersOptions ? this.options.reportersOptions.badge || {} : {};
     const badge = badgen({
       color: this.getColor(statistic),
-      status: statistic.total.percentage + '%',
+      status: this.getStatus(statistic),
       subject: 'Copy/Paste',
       ...badgeOptions
     });
@@ -37,6 +37,10 @@ export default class implements IReporter {
   }
 
   public attach(): void {
+  }
+
+  public getStatus(statistic: IStatistic): string {
+    return statistic ? statistic.total.percentage + '%' : 'N/A'
   }
 
   public getColor(statistic: IStatistic): string {
