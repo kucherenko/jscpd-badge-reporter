@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.3"></a>
+## [1.1.3](https://github.com/kucherenko/jscpd-bootstrap-reporter/compare/v1.1.2...v1.1.3) (2018-11-21)
+
+
+### Bug Fixes
+
+* **reporter:** N/A status label ([c90bceb](https://github.com/kucherenko/jscpd-bootstrap-reporter/commit/c90bceb))
+
+
+
 <a name="1.1.2"></a>
 ## [1.1.2](https://github.com/kucherenko/jscpd-bootstrap-reporter/compare/v1.1.1...v1.1.2) (2018-11-21)
 
