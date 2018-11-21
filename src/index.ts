@@ -40,7 +40,7 @@ export default class implements IReporter {
   }
 
   public getColor(statistic: IStatistic): string {
-    if (!statistic.hasOwnProperty('threshold')) {
+    if (!statistic || !statistic.hasOwnProperty('threshold')) {
       return 'grey';
     }
     return statistic.total.percentage < statistic.threshold ? 'green' : 'red';
