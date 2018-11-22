@@ -12,7 +12,7 @@ Generate badges:
 ### Install
 
 ```bash
-npm install jscpd@1.0.0-rc.5 jscpd-badge-reporter -g
+npm install jscpd jscpd-badge-reporter -g
 ```
 
 ### Usage
