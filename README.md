@@ -1,3 +1,5 @@
+# The repo is depricated, use [@jscpd/badge-reporter](https://github.com/kucherenko/jscpd/tree/master/packages/badge-reporter)
+
 # jscpd-badge-reporter
 
 The badge reporter for [jscpd](https://github.com/kucherenko/jscpd).
